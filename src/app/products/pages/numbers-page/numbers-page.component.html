@@ -1,0 +1,38 @@
+
+<div class="mt-5">
+
+  <p-panel [showHeader]="true" header="Numeric Pipes">
+
+    <p class="text-2xl font-semibold text-indigo-200">Pipes includes in CommonModule in Angular</p>
+  </p-panel>
+
+  <div class="grid mt-4">
+
+    <div class="col-12 md:col-4">
+      <p-card header="Net Sales" subheader="of current year">
+        <div class="flex flex-column items-center text-2xl font-bold text-yellow-200 ">
+            {{(totalSells + 14545) | number: '1.2-2'}}
+        </div>
+      </p-card>
+    </div>
+
+
+    <div class="col-12 md:col-4">
+      <p-card header="Gross Sales" subheader="of current year">
+        <div class="flex flex-column items-center text-2xl font-bold text-blue-400">
+            {{totalSells | currency:'MX':'symbol-narrow':'1.2-2'}}
+        </div>
+      </p-card>
+    </div>
+
+
+    <div class="col-12 md:col-4">
+      <p-card header="Percentage Gains" subheader="of current ">
+        <div class="flex flex-column justify-center items-center font-bold text-2xl text-green-300">
+            {{percent | percent:'1.2-2'}}
+        </div>
+      </p-card>
+    </div>
+
+  </div>
+</div>

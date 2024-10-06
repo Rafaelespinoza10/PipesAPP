@@ -1,0 +1,89 @@
+
+<div class="mt-5">
+  <p-panel [showHeader]="true" header="Basic Pipes">
+
+    <p class="text-2xl font-semibold text-indigo-200">Pipes includes in CommonModule in Angular</p>
+  </p-panel>
+
+  <div class="grid mt-4 ">
+
+    <div class="col-12 md:col-4">
+      <p-card header="Uppercase">
+        <div class="flex flex-column items-center text-xl">
+         <p><span class="font-bold text-blue-400"> Original: </span>  {{nameLower}}</p>
+         <p><span class="font-bold text-blue-400"> With pipe:</span> {{ nameLower | uppercase}}</p>
+        </div>
+
+      </p-card>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <p-card header="Lowercase">
+        <div class="flex flex-column items-center text-xl">
+          <p><span class="font-bold text-blue-400"> Original: </span>  {{nameLower}}</p>
+          <p><span class="font-bold text-blue-400"> With pipe:</span> {{ nameLower | lowercase}}</p>
+        </div>
+      </p-card>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <p-card header="Tilecase">
+        <div class="flex flex-column items-center text-xl">
+          <p><span class="font-bold text-blue-400"> Original: </span>  {{fullName}}</p>
+          <p><span class="font-bold text-blue-400"> With pipe:</span> {{ fullName | titlecase}}</p>
+        </div>
+      </p-card>
+    </div>
+
+
+    <div class="col-12 md:col-6">
+      <p-card header="Date Pipe:">
+        <div class="flex flex-column items-center text-xl">
+
+          <ol>
+            <li> dateCustom </li>
+            <li> dateCustom | date</li>
+            <li> dateCustom | date: 'short' </li>
+            <li> dateCustom | date: 'long' </li>
+            <li> dateCustom | date: 'MMMM' </li>
+            <li> dateCustom | date: 'MMMM dd, yyyy' </li>
+          </ol>
+          <hr>
+          <ol>
+            <li> dateCustom | date: 'long': 'GMT-6' </li>
+            <li> dateCustom | date: 'long': 'GMT-4' </li>
+            <li> dateCustom | date: 'long': '': 'es-MX' </li>
+            <li> dateCustom | date: 'long': '': 'fr-CA' </li>
+          </ol>
+
+        </div>
+      </p-card>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <p-card header="Results:">
+        <div class="flex flex-column items-center text-xl">
+
+          <ol>
+            <li>{{customDate}}</li>
+            <li>{{customDate | date }} </li>
+            <li> {{ customDate | date: 'short'}} </li>
+            <li> {{ customDate | date: 'long'}} </li>
+            <li> {{ customDate | date: 'MMMM'}} </li>
+            <li> {{customDate | date: 'MMMM dd, yyyy'}} </li>
+          </ol>
+
+          <hr>
+          <ol>
+            <li> {{customDate | date: 'long': 'GMT-6'}} </li>
+            <li> {{customDate | date: 'long': 'GMT-4'}} </li>
+            <li> {{customDate| date: 'long': '': 'es-MX'}} </li>
+            <li> {{customDate| date: 'long': '': 'fr-CA'}} </li>
+          </ol>
+
+        </div>
+      </p-card>
+    </div>
+
+  </div>
+</div>

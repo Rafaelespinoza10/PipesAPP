@@ -1,0 +1,80 @@
+<div class="mt-5">
+
+  <p-panel [showHeader]="true" header="Custom Pipes">
+
+    <p class="text-2xl font-semibold text-indigo-200">Custom pipes created by {{ 'us' | toggleCase:isUpperCase }}</p>
+  </p-panel>
+
+</div>
+
+<div class="mt-4">
+  <p-toolbar>
+    <div class="p-toolbar-group-start">
+      <div class="p-toolbar-group-start">
+        <p-button
+          label="ToggleCase"
+          icon="pi pi-search"
+          class="mr-2"
+          (click)="toggleUpperCase()"
+          />
+      </div>
+    </div>
+
+
+      <div class="p-toolbar-group-end">
+        <p-button
+           label="For Name "
+           icon="pi pi-sort"
+           class="mr-2"
+           (click)="changeOrder('name')"
+           styleClass="p-button-success"
+           />
+        <p-button
+          label="Can Fly"
+          icon="pi pi-sort"
+          class="mr-2"
+          (click)="changeOrder('canFly')"
+          styleClass="p-button-danger"
+
+          />
+        <p-button
+          label="For Colour"
+          icon="pi pi-sort"
+          (click)="changeOrder('color')"
+          styleClass="p-button-help"
+
+          />
+      </div>
+
+  </p-toolbar>
+</div>
+
+<div class="grid">
+  <div class="col mt-4">
+    <p-panel
+      [showHeader]="true" header=" Marvel And DC Heroes"
+    >
+      <p-table
+        [value]="heroes | sortBy:orderBy "
+        styleClass="p-datatable-striped"
+        [tableStyle]="{'min-width': '50rem'}"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Can Fly</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-hero>
+          <tr>
+            <td>{{ hero.name }}</td>
+            <td>{{ hero.color | colorPipe }}</td>
+            <td>{{ hero.canFly | canFly:true| titlecase }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-panel>
+  </div>
+</div>
